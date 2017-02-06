@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package firstParcialExercises.Parcial1;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class MyRectangle {//declaras atributos de la clase
+    private MyPoint l1;
+    private MyPoint l2;
+    
+    public MyRectangle(int x1, int y1, int x2,int y2){//constructor
+        this.l1 = new MyPoint(x1,y1);
+        this.l2 = new MyPoint(x2,y2);
+    }
+     public MyRectangle(MyPoint l1, MyPoint l2){
+        this.l1=l1;
+        this.l2=l2;
+     }
+     public MyPoint getl1() {//getters y setters que utiliza el programa para manipular las variables
+        return l1;
+    }
+     public void setl1(MyPoint l1) {
+        this.l1 = l1;
+        
+    }
+    public void setl1(int x, int y){
+        this.l1.setXY(x, y);
+    }
+    public MyPoint getl2() {
+        return l2;
+    }
+    public void setl2(MyPoint l2) {
+        this.l2 = l2;
+    }
+    public void setl2(int x, int y){
+        this.l1.setXY(x, y);
+    }
+    @Override//manipulacion de String
+    public String toString(){
+        return "MyRectangle[l1="+this.l1+",l2="+this.l2+"]";
+    }
+    public double getArea(){//metodo para calcular el area
+        return (this.l1.getX()-this.l2.getX())*(this.l2.getY()-this.l1.getY());
+    }
+    public double getPerimeter(){//metodo para calcular el perimetro
+        return ((this.l1.getX()-this.l2.getX())+(this.l2.getY()-this.l1.getY()))*2;
+    }
+
+}
