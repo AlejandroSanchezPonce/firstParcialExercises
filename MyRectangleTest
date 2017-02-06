@@ -16,11 +16,11 @@ public class NewMain {
      */
     public static void main(String[] args) {
         
-        MyPoint l1 = new MyPoint(5,0);//creas puntos de rectangulo
-        MyPoint l2 = new MyPoint(0,2);
-        MyRectangle test = new MyRectangle(l1,l2);//prueba el constructor con parametros MyPoint
-        System.out.println(test.getl1());
-        System.out.println(test.getl2());
+        MyPoint p1 = new MyPoint(5,0);//creas puntos de rectangulo
+        MyPoint p2 = new MyPoint(0,2);
+        MyRectangle test = new MyRectangle(p1,p2);//prueba el constructor con parametros MyPoint
+        System.out.println(test.getp1());
+        System.out.println(test.getp2());
         System.out.println(test);
         System.out.println(test.getArea());
         System.out.println(test.getPerimeter());// TODO code application logic here
