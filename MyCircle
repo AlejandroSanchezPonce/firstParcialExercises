@@ -1,0 +1,77 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package firstParcialExercises.Parcial1;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class MyCircle {//declaras atributos de la clase
+    private MyPoint center;//hereda de MyPoint
+    private int radius;
+    
+    public MyCircle(){//constructor para default
+        this.center = new MyPoint(0, 0);//hereda de MyPoint 
+        this.radius=1;
+    }
+    public MyCircle(int x, int y, int radius){//constructor para posicionar el centro en x y y
+        this.center.setY(y);
+        this.center.setX(x);
+        this.radius=radius;
+    }
+    public MyCircle(MyPoint center, int radius) {//constructor
+        this.center = center;
+        this.radius = radius;
+    }
+
+    public MyPoint getCenter() {//getters y setters del Diagrama
+        return center;
+    }
+
+    public void setCenter(MyPoint center) {
+        this.center = center;
+    }
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
+  public int getCenterX(){
+        return this.center.getX();
+    }
+    public void setCenterX(int x){
+        this.center.setX(x);
+    }
+    public int getCenterY(){
+        return this.center.getY();
+    }
+    public void setCenterY(int y){
+        this.center.setY(y);
+    }
+    public int []getCenterXY(){//crea el centro en un arreglo
+        return this.center.getXY();
+    }
+    public void setCenterXY(){
+        this.center.getXY();
+        
+    }
+    @Override//manipula el String
+    public String toString(){
+        return "MyCircle[radius="+this.radius+",center="+this.center+"]";
+    }
+    public double getArea(){//calcula el area
+        return Math.PI*Math.pow(this.radius, 2);
+    }
+    public double getCircumference(){//calcula la circuferencia
+        return 2*Math.PI*this.radius;
+    }
+    public double distance(MyCircle otrocentro){//calcula la discanca del centro en este circulo y el de MyCircle
+        return center.distance(otrocentro.center);
+    }
+}
