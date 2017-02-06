@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package firstParcialExercises.Parcial1;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Author {//declaras atributos de la clase
+    private String name;
+    private String email;
+    private char gender;
+
+    public Author(String name, String email, char gender) {//constructor de la clase
+        this.name = name;
+        this.email = email;
+        this.gender = gender;
+    }
+
+    public String getName() {//getters y setters del Diagrama
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+
+    public char getGender() {
+        return gender;
+    }
+    @Override// manipulacion del String
+    public String toString(){
+        return "Author[name="+this.name+",email="+this.email+",gender="+this.gender+"]";
+    }
+           
+}
