@@ -9,39 +9,37 @@ package firstParcialExercises.Parcial1;
  *
  * @author Alejandro
  */
-public class Rectangle {
-    private float length;//declaras elementos de la clase
-    private float width;
-
-    public Rectangle(float length, float width) {//constructor
-        this.length = length;
-        this.width = width;
+public class MyRectangle {//declaras atributos de la clase
+    private MyPoint l1;// hereda atributos de my pont
+    private MyPoint l2;
+    
+  
+    public MyRectangle(MyPoint l1, MyPoint l2){
+        this.l1=l1;
+        this.l2=l2;
+     }
+     public MyPoint getl1() {//getters y setters que utiliza el programa para manipular las variables
+        return l1;
     }
-    public float getLength() {//getters y setters del diagrama
-        return length;
+     public void setl1(MyPoint l1) {
+        this.l1 = l1;   
     }
-
-    public void setLength(float length) {
-        this.length = length;
+    public MyPoint getl2() {
+        return l2;
     }
-
-    public float getWidth() {
-        return width;
+    public void setl2(MyPoint l2) {
+        this.l2 = l2;
     }
-
-    public void setWidth(float width) {
-        this.width = width;
+ 
+    @Override//manipulacion de String
+    public String toString(){
+        return "MyRectangle[l1="+this.l1+",l2="+this.l2+"]";
     }
     public double getArea(){//metodo para calcular el area
-        return this.length*this.width;
+        return (this.l1.getX()-this.l2.getX())*(this.l2.getY()-this.l1.getY());
     }
     public double getPerimeter(){//metodo para calcular el perimetro
-        return 2*this.length+2*this.width;
+        return ((this.l1.getX()-this.l2.getX())+(this.l2.getY()-this.l1.getY()))*2;
     }
-    @Override
-    
-    public String toString(){//manipulacion de String
-        return "Rectangle(length="+this.length+", width="+this.width+")";
-    }
-    
+
 }
