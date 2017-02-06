@@ -1,0 +1,61 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package firstParcialExercises.Parcial1;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Circle1 {
+    private double radius; //instancias elementos de la clase
+    private String color;
+    
+public Circle1(){ //constructor un circulo default
+    radius=1.0;
+    color="red";
+}
+
+public Circle1(double radius){ // constructor un circulo con solo el color default
+    this.radius=radius;
+    this.color="red";
+}
+
+public Circle1(double radius, String color){//constructor de un circulo 
+    this.radius=radius;
+    this.color=color;
+}
+
+public Circle1(String color){//constructor de un criculo con solo un el radio default
+    this.radius=1.0;
+    this.color=color;
+}
+
+public double getRadius(){// getters and setters del diagrama
+    return this.radius;
+}
+
+public String getColor(){
+    return this.color;
+}
+
+public void setRadius(double radius){
+    this.radius=radius;
+}
+
+public void setColor(String color){
+    this.color=color;
+}
+@Override//esto nos sirve para modificar el String
+public String toString(){//metodo que modifica el toString
+    
+    return "Circle(radius= "+ this.radius + ", color= "+this.color+ ")";
+}
+
+public double getArea(){//metodo que saca el area
+    return Math.PI*this.radius*this.radius;
+}
+
+}
