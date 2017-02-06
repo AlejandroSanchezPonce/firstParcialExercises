@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package firstParcialExercises.Parcial1;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Book {//declaras atributos de la clase
+    private String name;
+    private Author[] authors;//hereda de la clase author y los mete en un arreglo
+    private double price;
+    private int qty;
+
+    public Book(String name, Author[] authors, double price) {//constructor sin la cantidad
+        this.name = name;
+        this.authors = authors;
+        this.price = price;
+    }
+
+    public Book(String name, Author[] authors, double price, int qty) {//constructor
+        this.name = name;
+        this.authors = authors;
+        this.price = price;
+        this.qty = qty;
+    }
+
+    public String getName() {//getters y setters del Diagrama
+        return name;
+    }
+
+    public Author[] getAuthors() {
+        return authors;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+    
+    @Override//manipulacion del String
+    public String toString(){
+        return "Book[name="+this.getName()+",authors="+getAuthorNames(this.authors)+"price="+this.getPrice()+",qty="+this.getQty()+"]";
+    }
+    public String getAuthorNames(Author[] authors){//hace el analisis si se da el caso de que fueran varios autores
+        String a="";
+        for(int i=0;i<authors.length;i++){
+            a +=authors[i].toString()+",";
+        }
+        return a;
+    }
+}
