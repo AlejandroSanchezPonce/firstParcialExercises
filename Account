@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package firstParcialExercises.Parcial1;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Account {//declaras atributos de la clase
+    private String ID;
+    private String name;
+    private int balance ;
+
+    public Account(String ID, String name) {//constructor de la classe por default
+        this(ID ,name ,0);
+        
+    }
+    
+
+    public Account(String ID, String name, int balance) {//constructor
+        this.ID = ID;
+        this.name = name;
+        this.balance=balance;
+    }
+
+    public String getID() {//getters y setters del diagrama
+        return ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+    public int credit(int amount){//metodo para añadir un monto al balance
+        this.balance += amount;
+        return balance;
+    }
+    public int debit(int amount){//vigila que el monto que retires no sea mayor que el que tienes
+        if (amount<=balance){
+            balance-=amount;
+        }else{
+            System.out.println("amount exceded balance");
+        }
+        return this.balance;
+    }
+    public int transterTo(Account another,int amount){////metodo para haccer una transferencia de una cuenta a otra
+        if(amount<= this.balance){
+            another.credit(amount);
+            this.balance-=amount;
+        }else{
+            System.out.println("amount exceded balance");
+        }
+        return this.balance;
+    }
+    @Override//manipulacion de String
+    public String toString(){
+        return "Account ID="+this.ID+"name="+this.name+"balance"+this.balance;
+    }
+}
