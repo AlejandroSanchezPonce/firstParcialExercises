@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package firstParcialExercises.Parcial1;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Empleado {// Declaras los atributos de la clase
+    private int id;
+    private String firstName;
+    private String LastName;
+    private int salary;
+
+    public Empleado(int id, String firstName, String LastName, int salary) {//constuctor
+        this.id = id;
+        this.firstName = firstName;
+        this.LastName = LastName;
+        this.salary = salary;
+    }
+
+    public int getId() {//getters y setters del diagrama
+        return id;
+    }
+
+   
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+   
+
+    public String getLastName() {
+        return LastName;
+    }
+
+    
+    
+    public String getName(){
+        return this.firstName+""+this.LastName;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+    public int getAnualSalary(){//metodo para calcular el salario anual
+        return this.salary*12;
+    }
+    public int raiseSalary(int percentage){//metodo para calcular el aumento del salario
+        this.salary += this.salary * percentage/100;
+        return this.salary;
+    }
+    @Override//manipulacion de String
+    public String toString(){
+        return "Employee id" + this.id +",name"+this.getName()+"Salary"+this.salary;
+    }
+}
