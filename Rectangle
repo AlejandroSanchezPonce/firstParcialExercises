@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package firstParcialExercises.Parcial1;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Rectangle {
+    private float length;//declaras elementos de la clase
+    private float width;
+
+    public Rectangle(float length, float width) {//constructor
+        this.length = length;
+        this.width = width;
+    }
+    public float getLength() {//getters y setters del diagrama
+        return length;
+    }
+
+    public void setLength(float length) {
+        this.length = length;
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public void setWidth(float width) {
+        this.width = width;
+    }
+    public double getArea(){//metodo para calcular el area
+        return this.length*this.width;
+    }
+    public double getPerimeter(){//metodo para calcular el perimetro
+        return 2*this.length+2*this.width;
+    }
+    @Override
+    
+    public String toString(){//manipulacion de String
+        return "Rectangle(length="+this.length+", width="+this.width+")";
+    }
+    
+}
